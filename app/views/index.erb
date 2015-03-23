@@ -1,0 +1,40 @@
+<head>
+<style>
+  .container p.error {color:red}
+</style>
+</head>
+
+<div class="container">
+  <h1>Welcome to URL Shortener</h1>
+
+  <h2>Log in or sign up to save your URLs!</h2>
+  <form action="/login" method="post">
+    <p>Login to your account:</p>
+    <input type="text" name="username_or_email" placeholder="Your username/ email">
+    <input type="password" name="password" placeholder="Your password">
+    <input type="submit" value="Log in">
+  </form>
+
+
+
+  <form action="/register" method="post">
+    <p>Register a new account here:</p>
+    <input type="text" name="user[username]" placeholder="Your username">
+    <input type="text" name="user[email]" placeholder="Your email">
+    <input type="password" name="user[password]" placeholder="Your password">
+    <input type="submit" value="Register!">
+  </form>
+  <br>
+  <% if @user && @user.errors %>
+  <% @user.errors.full_messages.each do |error| %>
+   <p class="error"><%= error %></p>
+  <% end %>
+<% end %>
+<br>
+  <h3>Create a short URL without logging in:</h3>
+    <form action="/urls" method="post">
+    <p><input type="text" name="long_url" placeholder="Enter your full URL"></p>
+    <input type="submit" value="Shorten URL!">
+  </form>
+</div>
+

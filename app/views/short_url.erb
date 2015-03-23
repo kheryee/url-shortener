@@ -1,0 +1,12 @@
+<div class='container'>
+  <% if @url.errors.empty? %>
+    <p>Your short URL is: <%=@short_url%></p>
+  <% else %>
+    <% @url.errors.full_messages.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+    <form action="/home" method="get">
+      <input type="submit" value="Home">
+    </form>
+</div>

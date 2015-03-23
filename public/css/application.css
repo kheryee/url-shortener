@@ -1,0 +1,16 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+p {
+  width: 25em;
+  word-wrap: break-word;
+}
+
+
+th {
+  text-align: left;
+}

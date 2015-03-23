@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div>
+
+    <h2><%= @user.username %>'s URLs:</h2>
+    <table>
+      <tr>
+        <th>Original URL</th>
+        <th>Shortened URL</th>
+      </tr>
+      <tr>
+        <td> <% @user.urls.each do |url| %>
+    <p><%= url.long_url %>
+      <%end%></p></td>
+        <td>  <% @user.urls.each do |url| %>
+    <a href="/<%= url.short_url%>"><p>/<%= url.short_url%></p></a>
+    <% end %></td>
+      </tr>
+    </table>
+  </div>
+
+<div>
+ <form action="/" method="get">
+      <input type="submit" value="Back">
+    </form>
+</div>
+
+
+</div>
